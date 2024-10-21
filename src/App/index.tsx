@@ -24,7 +24,7 @@ const selector = (state: RFState) => ({
   edges: state.edges,
   onNodesChange: state.onNodesChange,
   onEdgesChange: state.onEdgesChange,
-  addChildNode: state.addChildNode,
+  addCustomChildNode: state.addCustomChildNode,
 });
 
 const nodeTypes = {
@@ -42,10 +42,10 @@ const defaultEdgeOptions = { style: connectionLineStyle, type: 'mindmap' };
 
 function Flow() {
   const store = useStoreApi();
-  const { nodes, edges, onNodesChange, onEdgesChange, addChildNode } = useStore(
+  const { nodes, edges, onNodesChange, onEdgesChange, addCustomChildNode } = useStore(
     selector,
     shallow
-  );
+  );  
   const { project } = useReactFlow();
   const connectingNodeId = useRef<string | null>(null);
 
@@ -78,27 +78,35 @@ function Flow() {
     };
   };
 
-  const onConnectStart: OnConnectStart = useCallback((_, { nodeId }) => {
+  const onConnectStart: OnConnectStart = useCallback((_, { nodeId }) => {    
     // we need to remember where the connection started so we can add the new node to the correct parent on connect end
     connectingNodeId.current = nodeId;
   }, []);
 
   const onConnectEnd: OnConnectEnd = useCallback(
     (event) => {
+      let currentNode = null;
       const { nodeInternals } = store.getState();
       const targetIsPane = (event.target as Element).classList.contains(
         'react-flow__pane'
       );
       const node = (event.target as Element).closest('.react-flow__node');
+      console.log("==========nodeId<div>==========", node);
+      const nodeId = node?.getAttribute('data-id');
+      currentNode = nodeId;
+      
 
       if (node) {
         node.querySelector('input')?.focus({ preventScroll: true });
+        addCustomChildNode(nodeInternals.get(connectingNodeId.current), getChildNodePosition(event, nodeInternals.get(connectingNodeId.current)), currentNode);
       } else if (targetIsPane && connectingNodeId.current) {
         const parentNode = nodeInternals.get(connectingNodeId.current);
         const childNodePosition = getChildNodePosition(event, parentNode);
 
         if (parentNode && childNodePosition) {
-          addChildNode(parentNode, childNodePosition);
+          addCustomChildNode(parentNode, childNodePosition, currentNode);
+         console.log("==========addCustomChildNode=========", parentNode?.id);
+
         }
       }
     },

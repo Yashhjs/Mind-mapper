@@ -20,7 +20,7 @@ export type RFState = {
   onNodesChange: OnNodesChange;
   onEdgesChange: OnEdgesChange;
   updateNodeLabel: (nodeId: string, label: string) => void;
-  addChildNode: (parentNode: Node, position: XYPosition) => void;
+  addCustomChildNode: (parentNode: Node, position: XYPosition, existingTargetNodeId?: string) => void;
 };
 
 const useStore = create<RFState>((set, get) => ({
@@ -38,6 +38,7 @@ const useStore = create<RFState>((set, get) => ({
     set({
       nodes: applyNodeChanges(changes, get().nodes),
     });
+
   },
   onEdgesChange: (changes: EdgeChange[]) => {
     set({
@@ -56,7 +57,12 @@ const useStore = create<RFState>((set, get) => ({
       }),
     });
   },
-  addChildNode: (parentNode: Node, position: XYPosition) => {
+  addCustomChildNode: (parentNode: Node, position: XYPosition , existingTargetNodeId?: any) => {
+
+    // await addChildNode(parentNode, existingTargetNodeId);
+
+    console.log("===========existingTargetNodeId=============", existingTargetNodeId);
+    
     const newNode = {
       id: nanoid(),
       type: 'mindmap',
@@ -67,10 +73,12 @@ const useStore = create<RFState>((set, get) => ({
     };
 
     const newEdge = {
-      id: nanoid(),
-      source: parentNode.id,
-      target: newNode.id,
+        id: nanoid(),
+        source: parentNode.id,
+        target: existingTargetNodeId || newNode.id ,
     };
+
+    console.log("========newEdge=========", newEdge);
 
     set({
       nodes: [...get().nodes, newNode],
