@@ -15,6 +15,7 @@ import ReactFlow, {
   Background,
 } from 'reactflow';
 import shallow from 'zustand/shallow';
+import FileActions from './Component/FileActions';
 
 import useStore, { RFState } from './store';
 import MindMapNode from './MindMapNode';
@@ -183,6 +184,7 @@ function Flow() {
       connectionLineType={ConnectionLineType.Straight}
       fitView
     >
+      <FileActions onAddFile={undefined} onExportData={undefined}/>
       <Controls showInteractive={false} />
       <Panel position="top-left" className="header">
         React Flow Mind Map

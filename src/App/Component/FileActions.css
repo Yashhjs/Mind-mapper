@@ -1,0 +1,43 @@
+/* Container for the buttons */
+.file-actions {
+    position: absolute;
+    top: 16px; /* Adjust top margin as needed */
+    right: 16px; /* Adjust right margin as needed */
+    display: flex;
+    gap: 12px; /* Space between the buttons */
+    z-index: 10; /* Ensure it appears above other elements */
+  }
+  
+  /* General Button Styles */
+  .action-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  /* Add File Button */
+  .add-file {
+    background-color: #4caf50; /* Green */
+    color: white;
+  }
+  
+  .add-file:hover {
+    background-color: #45a049; /* Darker green */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
+  /* Export Data Button */
+  .export-data {
+    background-color: #2196f3; /* Blue */
+    color: white;
+  }
+  
+  .export-data:hover {
+    background-color: #1976d2; /* Darker blue */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
