@@ -5,6 +5,7 @@ import useStore from '../store';
 
 import DragIcon from './DragIcon';
 
+
 export type NodeData = {
   label: string;
 };
@@ -13,6 +14,8 @@ function MindMapNode({ id, data }: NodeProps<NodeData>) {
   const inputRef = useRef<HTMLInputElement>(null);
   const updateNodeLabel = useStore((state) => state.updateNodeLabel);
 
+  // console.log("===================> data.hidden <======================", data);
+  
   useEffect(() => {
     setTimeout(() => {
       inputRef.current?.focus({ preventScroll: true });
@@ -27,7 +30,7 @@ function MindMapNode({ id, data }: NodeProps<NodeData>) {
 
   return (
     <>
-      <div className="inputWrapper">
+      <div className={`inputWrapper`}>
         <div className="dragHandle">
           <DragIcon />
         </div>

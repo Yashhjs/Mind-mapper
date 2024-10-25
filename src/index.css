@@ -1,3 +1,4 @@
+/* General Body and Root Styles */
 body {
   margin: 0;
   background-color: #f8f8f8;
@@ -17,67 +18,136 @@ body,
   color: #cdcdcd;
 }
 
+/* Node Styles for MindMap */
 .react-flow__node-mindmap {
-  background: white;
-  border-radius: 2px;
-  border: none;
-  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent for a lighter feel */
+  border-radius: 10px; /* More rounded corners for a softer look */
+  border: 1px solid #e0e0e0; /* Light border for definition */
+  padding: 8px 12px; /* Increased padding for better readability */
   font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth transition on hover */
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
 }
 
+/* Hover effect for mindmap nodes */
+.react-flow__node-mindmap:hover {
+  background: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow for emphasis */
+  transform: scale(1.05); /* Slightly increase the size of the node on hover */
+}
+
+/* Connection Handle Styles */
 .react-flow__handle.target {
   top: 50%;
   pointer-events: none;
-  opacity: 0;
+  opacity: 0; /* Hidden by default */
 }
 
 .react-flow__handle.source {
   top: 0;
   left: 0;
   transform: none;
-  background: #f6ad55;
+  background: #ffdd99; /* More visible color for handles */
   height: 100%;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 4px;
   border: none;
+  transition: background 0.2s; /* Smooth color transition on hover */
 }
 
+/* Hover effect for connection handles */
+.react-flow__handle.source:hover {
+  background: #ffc966; /* Darker shade on hover */
+}
+
+/* Connection Line */
 .react-flow .react-flow__connectionline {
   z-index: 0;
+  stroke: #ffa726; /* Bright color for connection lines */
+  stroke-width: 2px;
+  transition: stroke 0.3s, stroke-width 0.3s; /* Smooth transition on hover */
 }
 
+/* Input Wrapper */
 .inputWrapper {
   display: flex;
-  height: 20px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transition for hover */
   z-index: 1;
   position: relative;
-  pointer-events: none;
+  cursor: pointer; /* Pointer cursor to indicate interactivity */
 }
 
-.dragHandle {
-  background: transparent;
-  width: 14px;
-  height: 100%;
-  margin-right: 4px;
-  display: flex;
-  align-items: center;
-  pointer-events: all;
+/* Hover effect for the entire inputWrapper */
+.inputWrapper:hover {
+  transform: scale(1.05); /* Slightly increase the size of the whole container on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  background-color: rgba(255, 255, 255, 0.9); /* Lighter background on hover */
 }
 
+/* Styling for the input field inside the Mindmap node */
 .input {
   border: none;
-  padding: 0 2px;
-  border-radius: 1px;
+  padding: 0 4px;
+  border-radius: 5px;
   font-weight: 700;
   background: transparent;
+  color: #333; /* Darker text for better contrast */
   height: 100%;
-  color: #222;
-  pointer-events: none;
+  flex: 1; /* Make the input take available space */
+  transition: transform 0.3s, color 0.3s, background 0.3s; /* Smooth transition for hover and focus */
+  pointer-events: all; /* Ensure input can be clicked/edited */
 }
 
+/* Hover effect for the input text when hovering the node */
+.inputWrapper:hover .input {
+  transform: scale(1.1); /* Increase text size inside the input */
+  color: #000; /* Darken text color on hover for better readability */
+}
+
+/* Focused Input */
 .input:focus {
   border: none;
   outline: none;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.35); /* More visible background on focus */
   pointer-events: all;
+}
+
+/* Placeholder for better UX */
+.input::placeholder {
+  color: #888; /* Subtle placeholder color */
+  opacity: 0.6;
+}
+
+/* Drag Handle */
+.dragHandle {
+  background: transparent;
+  width: 16px; /* Slightly wider for easier dragging */
+  height: 100%;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab; /* Indicate draggable area */
+  font-size: 1.2em; /* Adjust icon or drag handle size if applicable */
+  color: #888; /* Slightly muted color for drag handle */
+  transition: transform 0.3s, color 0.3s; /* Smooth transition for transform and color */
+  pointer-events: all;
+}
+
+/* Hover effect for the drag handle */
+.inputWrapper:hover .dragHandle {
+  transform: scale(1.1); /* Slightly scale up the drag handle */
+  color: #555; /* Darker color on hover */
+}
+
+/* Active dragging state */
+.dragHandle:active {
+  cursor: grabbing; /* Visual feedback while dragging */
+  transform: scale(1.1); /* Slight zoom effect on click */
 }

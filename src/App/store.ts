@@ -31,6 +31,8 @@ const useStore = create<RFState>((set, get) => ({
       data: { label: 'React Flow Mind Map' },
       position: { x: 0, y: 0 },
       dragHandle: '.dragHandle',
+      hidden: false,
+      animated: true
     },
   ],
   edges: [],
@@ -57,11 +59,9 @@ const useStore = create<RFState>((set, get) => ({
       }),
     });
   },
-  addCustomChildNode: (parentNode: Node, position: XYPosition , existingTargetNodeId?: any) => {
-
-    // await addChildNode(parentNode, existingTargetNodeId);
-
-    console.log("===========existingTargetNodeId=============", existingTargetNodeId);
+  addCustomChildNode: (parentNode: Node, position: XYPosition, existingTargetNodeId?: any) => {
+    // Log the existingTargetNodeId for debugging
+    // console.log("===========existingTargetNodeId=============", existingTargetNodeId);
     
     const newNode = {
       id: nanoid(),
@@ -70,21 +70,34 @@ const useStore = create<RFState>((set, get) => ({
       position,
       dragHandle: '.dragHandle',
       parentNode: parentNode.id,
+      hidden: false,
+      animated: true
     };
-
+  
     const newEdge = {
-        id: nanoid(),
-        source: parentNode.id,
-        target: existingTargetNodeId || newNode.id ,
+      id: nanoid(),
+      source: parentNode.id,
+      target: existingTargetNodeId || newNode.id,
     };
-
-    console.log("========newEdge=========", newEdge);
-
+  
+    // console.log("========newEdge=========", newEdge);
+  
+    // Create an updated state for nodes and edges
+    let updatedNodes = get().nodes;
+    let updatedEdges = [...get().edges, newEdge];
+  
+    // If no existingTargetNodeId, add the new node to the nodes array
+    if (!existingTargetNodeId) {
+      updatedNodes = [...updatedNodes, newNode];
+    }
+  
+    // Update the state with the new nodes and edges
     set({
-      nodes: [...get().nodes, newNode],
-      edges: [...get().edges, newEdge],
+      nodes: updatedNodes,
+      edges: updatedEdges,
     });
   },
+  
 }));
 
 export default useStore;
