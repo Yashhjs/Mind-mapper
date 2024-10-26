@@ -41,3 +41,39 @@
     transform: scale(1.05); /* Slightly larger on hover */
   }
   
+
+  .file-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .action-button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px); /* Blurs the background */
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .modal-content input[type="file"] {
+    margin-bottom: 10px;
+  }
+  

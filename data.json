@@ -1,0 +1,717 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "type": "mindmap",
+      "data": {
+        "label": "ZestGeek",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": -244.93707791013804,
+        "y": -33.01060596774018
+      },
+      "dragHandle": ".dragHandle",
+      "hidden": false,
+      "animated": true,
+      "width": 144,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -244.93707791013804,
+        "y": -33.01060596774018
+      },
+      "dragging": false
+    },
+    {
+      "id": "WntBwkH11b_nuG0JO8rbt",
+      "type": "mindmap",
+      "data": {
+        "label": "JS TEAM ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 244.5,
+        "y": -27
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "root",
+      "hidden": false,
+      "animated": true,
+      "width": 144,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -67.5,
+        "y": -157.5
+      },
+      "dragging": false
+    },
+    {
+      "id": "ZaoFvciSQVtJS_3uylYyZ",
+      "type": "mindmap",
+      "data": {
+        "label": "PHP TEAM ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 238.5,
+        "y": 44.5
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "root",
+      "hidden": false,
+      "animated": true,
+      "width": 152,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -73.5,
+        "y": -86
+      },
+      "dragging": false
+    },
+    {
+      "id": "cdYHkWZ9wN6mUkRtNptwL",
+      "type": "mindmap",
+      "data": {
+        "label": "BIDDING",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 147.2972510437781,
+        "y": 149.2516883594479
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "root",
+      "hidden": false,
+      "animated": true,
+      "width": 136,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -177.6957576129039,
+        "y": 164.75145045392154
+      },
+      "dragging": false
+    },
+    {
+      "id": "czfX7tu--Fh2_dfjFkitt",
+      "type": "mindmap",
+      "data": {
+        "label": "MARKETING ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 24.03857134101213,
+        "y": 253.47541134562385
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "root",
+      "hidden": false,
+      "animated": true,
+      "width": 160,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -300.95443731566985,
+        "y": 268.9751734400975
+      },
+      "dragging": false
+    },
+    {
+      "id": "ig_6dBzaS6zK16ZXQ7rST",
+      "type": "mindmap",
+      "data": {
+        "label": "WEB  DEV'S ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 260.5,
+        "y": -21.5
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "WntBwkH11b_nuG0JO8rbt",
+      "hidden": false,
+      "animated": true,
+      "width": 168,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 113.5,
+        "y": -140
+      },
+      "dragging": false
+    },
+    {
+      "id": "ghkSbrkTFvQGaN5x0pMuw",
+      "type": "mindmap",
+      "data": {
+        "label": "REACT NATIVE ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 262,
+        "y": 44
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "WntBwkH11b_nuG0JO8rbt",
+      "hidden": false,
+      "animated": true,
+      "width": 184,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 115,
+        "y": -74.5
+      },
+      "dragging": false
+    },
+    {
+      "id": "7aFAgemAKJjUE_b_Ee5T0",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. ROHIT",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 284.6878146474803,
+        "y": -31.125606274197565
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ig_6dBzaS6zK16ZXQ7rST",
+      "hidden": false,
+      "animated": true,
+      "width": 152,
+      "height": 50,
+      "selected": true,
+      "positionAbsolute": {
+        "x": 316.75073673734227,
+        "y": -187.63621224193776
+      },
+      "dragging": false
+    },
+    {
+      "id": "nAQV0jv4o6mg_uT9EnpT5",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. HARSHIT ",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": 408.5477498755939,
+        "y": 78.6364501474641
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ig_6dBzaS6zK16ZXQ7rST",
+      "hidden": false,
+      "animated": true,
+      "width": 176,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 440.6106719654559,
+        "y": -77.87415582027609
+      },
+      "dragging": false
+    },
+    {
+      "id": "yMmKfo8tRyYhuVzHLh-NF",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. BHAGWAN ",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": 393.44287972582407,
+        "y": 167.25168835944794
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ig_6dBzaS6zK16ZXQ7rST",
+      "hidden": false,
+      "animated": true,
+      "width": 176,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 425.505801815686,
+        "y": 10.741082391707739
+      },
+      "dragging": false
+    },
+    {
+      "id": "QI8xEbl5T6UKLLLDkb3uG",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. VIKAS",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 487.093074654398,
+        "y": 4.119090741932382
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ig_6dBzaS6zK16ZXQ7rST",
+      "hidden": false,
+      "animated": true,
+      "width": 152,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 519.1559967442599,
+        "y": -152.3915152258078
+      },
+      "dragging": false
+    },
+    {
+      "id": "4rYGbnu3q8l1mYG5Sd9XC",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. KARAN ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 256.95010897466847,
+        "y": 273.9472080668255
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ghkSbrkTFvQGaN5x0pMuw",
+      "hidden": false,
+      "animated": true,
+      "width": 160,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 282.5130310645304,
+        "y": 182.9366020990853
+      },
+      "dragging": false
+    },
+    {
+      "id": "CGT5xaU7V2BAo16IuYSuv",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. MITHILESH ",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": 333.4814510668363,
+        "y": 179.29002179493375
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ghkSbrkTFvQGaN5x0pMuw",
+      "hidden": false,
+      "animated": true,
+      "width": 192,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 359.04437315669827,
+        "y": 88.27941582719356
+      },
+      "dragging": false
+    },
+    {
+      "id": "p__PFu4I9K1C7coBnaLV1",
+      "type": "mindmap",
+      "data": {
+        "label": "Yash",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 324.6429656797295,
+        "y": -2.1887662695859262
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "yMmKfo8tRyYhuVzHLh-NF",
+      "hidden": false,
+      "animated": true,
+      "width": 112,
+      "height": 50
+    },
+    {
+      "id": "rDiLlLs1-MHroQCyzOkEi",
+      "type": "mindmap",
+      "data": {
+        "label": "Paras",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": 313.5660609032316,
+        "y": 65.27965373271991
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "yMmKfo8tRyYhuVzHLh-NF",
+      "hidden": false,
+      "animated": true,
+      "width": 120,
+      "height": 50
+    },
+    {
+      "id": "oKBqQFFDYHuZUhzIfHLIg",
+      "type": "mindmap",
+      "data": {
+        "label": "Vivek",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 31.69238089400818,
+        "y": -50.52435074884977
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "7aFAgemAKJjUE_b_Ee5T0",
+      "hidden": false,
+      "animated": true,
+      "width": 120,
+      "height": 50
+    },
+    {
+      "id": "wed1wWQ-T5xz72RUhCVlv",
+      "type": "mindmap",
+      "data": {
+        "label": "Loveleen",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 169.6501949285738,
+        "y": -61.60125552534774
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "7aFAgemAKJjUE_b_Ee5T0",
+      "hidden": false,
+      "animated": true,
+      "width": 144,
+      "height": 50
+    },
+    {
+      "id": "hFMowwO429PCa3wyNjpJ0",
+      "type": "mindmap",
+      "data": {
+        "label": "Nishant",
+        "isCollapsed": true
+      },
+      "position": {
+        "x": 196.83896119815967,
+        "y": -58.58028149539379
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "QI8xEbl5T6UKLLLDkb3uG",
+      "hidden": false,
+      "animated": true,
+      "width": 136,
+      "height": 50
+    },
+    {
+      "id": "ceWqzN6m2xccYyZ20iSCj",
+      "type": "mindmap",
+      "data": {
+        "label": "Reeta",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 227.0487014976996,
+        "y": 18.95805194009199
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "QI8xEbl5T6UKLLLDkb3uG",
+      "hidden": false,
+      "animated": true,
+      "width": 120,
+      "height": 50
+    },
+    {
+      "id": "SdhV5iKcZxTyxXrsskNCh",
+      "type": "mindmap",
+      "data": {
+        "label": "Lovish",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 355.9156280691313,
+        "y": 94.48240268894185
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "4rYGbnu3q8l1mYG5Sd9XC",
+      "hidden": false,
+      "animated": true,
+      "width": 128,
+      "height": 50
+    },
+    {
+      "id": "JgFw6hPtDxmbokdK8gwJ9",
+      "type": "mindmap",
+      "data": {
+        "label": "MR. AMIT",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 243.60777105761304,
+        "y": 163.04171015438163
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ZaoFvciSQVtJS_3uylYyZ",
+      "hidden": false,
+      "animated": true,
+      "width": 144,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 81.11476240093104,
+        "y": 198.04147224885526
+      },
+      "dragging": false
+    },
+    {
+      "id": "jJ_4khTZfYwaOTUfN3iPT",
+      "type": "mindmap",
+      "data": {
+        "label": "BCD ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 272.8105200138349,
+        "y": 91.5453247788038
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "ZaoFvciSQVtJS_3uylYyZ",
+      "hidden": false,
+      "animated": true,
+      "width": 112,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 110.31751135715294,
+        "y": 126.54508687327743
+      },
+      "dragging": false
+    },
+    {
+      "id": "eF6DCDQdgNd2arCt12d5P",
+      "type": "mindmap",
+      "data": {
+        "label": "KLM ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 168.71287911290932,
+        "y": 145.8982686635995
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "cdYHkWZ9wN6mUkRtNptwL",
+      "hidden": false,
+      "animated": true,
+      "width": 112,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": -76.98287849999458,
+        "y": 285.64971911752104
+      },
+      "dragging": false
+    },
+    {
+      "id": "mUpacdXIQKqAyCP4TiYUz",
+      "type": "mindmap",
+      "data": {
+        "label": "FRC ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 297.607771057613,
+        "y": 126.76543314055752
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "cdYHkWZ9wN6mUkRtNptwL",
+      "hidden": false,
+      "animated": true,
+      "width": 112,
+      "height": 50,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 51.912013444709096,
+        "y": 266.51688359447905
+      },
+      "dragging": false
+    },
+    {
+      "id": "azTHdtoKo4p1cJxqrYExl",
+      "type": "mindmap",
+      "data": {
+        "label": "ABC ",
+        "isCollapsed": false
+      },
+      "position": {
+        "x": 25.03495671658999,
+        "y": 128.27580120277133
+      },
+      "dragHandle": ".dragHandle",
+      "parentNode": "czfX7tu--Fh2_dfjFkitt",
+      "hidden": false,
+      "animated": true,
+      "width": 112,
+      "height": 50
+    }
+  ],
+  "edges": [
+    {
+      "id": "0TPGEUMhgs_FIGz8K8AsL",
+      "source": "root",
+      "target": "WntBwkH11b_nuG0JO8rbt"
+    },
+    {
+      "id": "63jHo606pvHQUxNJkXyFr",
+      "source": "root",
+      "target": "ZaoFvciSQVtJS_3uylYyZ"
+    },
+    {
+      "id": "zOoKAA9OHtU0bF-9ibmdJ",
+      "source": "root",
+      "target": "cdYHkWZ9wN6mUkRtNptwL"
+    },
+    {
+      "id": "KuLB2sOfwvo_2y1n6tWCx",
+      "source": "root",
+      "target": "czfX7tu--Fh2_dfjFkitt"
+    },
+    {
+      "id": "kc9dabZbYwWZVyXLyaK22",
+      "source": "WntBwkH11b_nuG0JO8rbt",
+      "target": "ig_6dBzaS6zK16ZXQ7rST"
+    },
+    {
+      "id": "ZPlhshog9C356I3gUFfyY",
+      "source": "WntBwkH11b_nuG0JO8rbt",
+      "target": "ghkSbrkTFvQGaN5x0pMuw"
+    },
+    {
+      "id": "ZSAF94M_7Qb8IHXqlqm-g",
+      "source": "WntBwkH11b_nuG0JO8rbt",
+      "target": "WntBwkH11b_nuG0JO8rbt"
+    },
+    {
+      "id": "EAWo4Od1Wf91CSEgSmuq_",
+      "source": "WntBwkH11b_nuG0JO8rbt",
+      "target": "WntBwkH11b_nuG0JO8rbt"
+    },
+    {
+      "id": "o4j9hvt_TABFfEq83M6yu",
+      "source": "WntBwkH11b_nuG0JO8rbt",
+      "target": "WntBwkH11b_nuG0JO8rbt"
+    },
+    {
+      "id": "HanTGNncffFqmjcAQmufX",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "7aFAgemAKJjUE_b_Ee5T0"
+    },
+    {
+      "id": "Srsj8qHCWPJ8L4EvUWRSg",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "nAQV0jv4o6mg_uT9EnpT5"
+    },
+    {
+      "id": "rkxHWuWdlheiRFafnY3sf",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "yMmKfo8tRyYhuVzHLh-NF"
+    },
+    {
+      "id": "bEgUubOkAPfaM2i28to5x",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "ig_6dBzaS6zK16ZXQ7rST"
+    },
+    {
+      "id": "PE5MnOcQV4Gl5XmBqkG-M",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "QI8xEbl5T6UKLLLDkb3uG"
+    },
+    {
+      "id": "8STmdpwFEuaKT0nmfWAdx",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "ig_6dBzaS6zK16ZXQ7rST"
+    },
+    {
+      "id": "_TTs7N1nIn_wNyani397b",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "ig_6dBzaS6zK16ZXQ7rST"
+    },
+    {
+      "id": "EjACqYwcJU3DmwMdIMe5U",
+      "source": "ig_6dBzaS6zK16ZXQ7rST",
+      "target": "ig_6dBzaS6zK16ZXQ7rST"
+    },
+    {
+      "id": "sMM6tcoaXjy9HNy0dvX1p",
+      "source": "ghkSbrkTFvQGaN5x0pMuw",
+      "target": "4rYGbnu3q8l1mYG5Sd9XC"
+    },
+    {
+      "id": "ID7AOfe-mLV6pNNcq2stf",
+      "source": "ghkSbrkTFvQGaN5x0pMuw",
+      "target": "CGT5xaU7V2BAo16IuYSuv"
+    },
+    {
+      "id": "HcOEx5irBQdQUNBAKsmJO",
+      "source": "yMmKfo8tRyYhuVzHLh-NF",
+      "target": "p__PFu4I9K1C7coBnaLV1"
+    },
+    {
+      "id": "QKOOMHrjhfSPzSsEDyqAd",
+      "source": "yMmKfo8tRyYhuVzHLh-NF",
+      "target": "rDiLlLs1-MHroQCyzOkEi"
+    },
+    {
+      "id": "R0j50am84B9KPzVJJ1xTD",
+      "source": "7aFAgemAKJjUE_b_Ee5T0",
+      "target": "oKBqQFFDYHuZUhzIfHLIg"
+    },
+    {
+      "id": "85ri4KMN5rZoZ2moHdwO7",
+      "source": "7aFAgemAKJjUE_b_Ee5T0",
+      "target": "wed1wWQ-T5xz72RUhCVlv"
+    },
+    {
+      "id": "dL5BoG1bxAOmNQnKmYYU-",
+      "source": "QI8xEbl5T6UKLLLDkb3uG",
+      "target": "hFMowwO429PCa3wyNjpJ0"
+    },
+    {
+      "id": "GLqrQq_wM3XxuZdFwUCXB",
+      "source": "QI8xEbl5T6UKLLLDkb3uG",
+      "target": "ceWqzN6m2xccYyZ20iSCj"
+    },
+    {
+      "id": "feapnBYiJRsYh1BziHV7M",
+      "source": "4rYGbnu3q8l1mYG5Sd9XC",
+      "target": "SdhV5iKcZxTyxXrsskNCh"
+    },
+    {
+      "id": "kYttS4xTi7i-FUQiXOQZ7",
+      "source": "CGT5xaU7V2BAo16IuYSuv",
+      "target": "SdhV5iKcZxTyxXrsskNCh"
+    },
+    {
+      "id": "EeSgaK7n-Tdu6R4NVKxHb",
+      "source": "ZaoFvciSQVtJS_3uylYyZ",
+      "target": "JgFw6hPtDxmbokdK8gwJ9"
+    },
+    {
+      "id": "T5LdOWHeESmHIpVluKZwB",
+      "source": "ZaoFvciSQVtJS_3uylYyZ",
+      "target": "jJ_4khTZfYwaOTUfN3iPT"
+    },
+    {
+      "id": "ZA-5PoJA4zvRUaUNBA2Wn",
+      "source": "cdYHkWZ9wN6mUkRtNptwL",
+      "target": "eF6DCDQdgNd2arCt12d5P"
+    },
+    {
+      "id": "OIXZ7N8abxRatfc5Yr0Yg",
+      "source": "cdYHkWZ9wN6mUkRtNptwL",
+      "target": "mUpacdXIQKqAyCP4TiYUz"
+    },
+    {
+      "id": "u8vTXreaP-cH6KWxQtMsb",
+      "source": "czfX7tu--Fh2_dfjFkitt",
+      "target": "azTHdtoKo4p1cJxqrYExl"
+    }
+  ]
+}

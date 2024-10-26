@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef , useEffect} from 'react';
+import { useCallback, useState, useRef , useEffect, SetStateAction} from 'react';
 import ReactFlow, {
   ConnectionLineType,
   NodeOrigin,
@@ -18,8 +18,10 @@ import shallow from 'zustand/shallow';
 import FileActions from './Component/FileActions';
 
 import useStore, { RFState } from './store';
-import MindMapNode from './MindMapNode';
+import MindMapNode, { NodeData } from './MindMapNode';
 import MindMapEdge from './MindMapEdge';
+
+import './error.css';
 
 // Import React Flow styles
 import 'reactflow/dist/style.css';
@@ -59,11 +61,26 @@ function Flow() {
 
   const [currentNodes, setNodes] = useState(nodes); 
   const [currentEdges, setEdges] = useState(edges);
+  const [showError, setShowError] = useState(false);
+
   useEffect(() => {
+    if (nodes.length === 0) {
+      setShowError(true); // Trigger error modal if there are no nodes
+    }
     setNodes(nodes);
   }, [nodes]);
-  
   // Check if the target node is not 'root'
+
+  const handleAddFile = (importedNodes: SetStateAction<Node<NodeData>[]>, importedEdges: SetStateAction<Edge[]>) => {
+
+    useStore.setState({
+      nodes: importedNodes,
+      edges: importedEdges,
+    });
+    
+    setNodes(importedNodes);
+    setEdges(importedEdges);
+  };
   
   const handleNodeClick = (event: React.MouseEvent, node: Node) => {
     const isCollapsed = node.data?.isCollapsed || false;  
@@ -167,31 +184,58 @@ function Flow() {
   );
 
 
+  const downloadJSON = () => {
+    const data = { nodes, edges };
+    const jsonString = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'data.json';
+    link.click();
+    URL.revokeObjectURL(link.href);
+  };
+
+  const handleCloseError = () => {
+    setShowError(false);
+    window.location.reload(); // Refresh the page
+  };
+
   return (
-    <ReactFlow
-      nodes={currentNodes.filter(node => !node.hidden)} 
-      edges={edges}  
-      onNodesChange={onNodesChange}
-      onEdgesChange={onEdgesChange}
-      onConnectStart={onConnectStart}
-      onConnectEnd={onConnectEnd}
-      onNodeClick={(event, node) => handleNodeClick(event, node)}  
-      nodeTypes={nodeTypes}
-      edgeTypes={edgeTypes}
-      nodeOrigin={nodeOrigin}
-      defaultEdgeOptions={defaultEdgeOptions}
-      connectionLineStyle={connectionLineStyle}
-      connectionLineType={ConnectionLineType.Straight}
-      fitView
-    >
-      <FileActions onAddFile={undefined} onExportData={undefined}/>
-      <Controls showInteractive={false} />
-      <Panel position="top-left" className="header">
-        React Flow Mind Map
-      </Panel>
-      <Background/>
-      <MiniMap/>
-    </ReactFlow>
+    <>
+      {showError && (
+        <div className="error-modal">
+          <div className="error-content">
+            <p>No nodes available!</p>
+            <button onClick={handleCloseError}>OK</button>
+          </div>
+        </div>
+      )}
+
+      <ReactFlow
+        nodes={currentNodes.filter(node => !node.hidden)} 
+        edges={edges}  
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnectStart={onConnectStart}
+        onConnectEnd={onConnectEnd}
+        onNodeClick={(event, node) => handleNodeClick(event, node)}  
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        nodeOrigin={nodeOrigin}
+        defaultEdgeOptions={defaultEdgeOptions}
+        connectionLineStyle={connectionLineStyle}
+        connectionLineType={ConnectionLineType.Straight}
+        fitView
+      >
+        <FileActions onAddFile={handleAddFile} onExportData={downloadJSON}/>
+        <Controls showInteractive={false} />
+        <Panel position="top-left" className="header">
+          React Flow Mind Map
+        </Panel>
+        <Background/>
+        <MiniMap/>
+      </ReactFlow>
+    </>
   );
 }
 
