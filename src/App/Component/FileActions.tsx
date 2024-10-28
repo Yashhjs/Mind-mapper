@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Swal from 'sweetalert2';
 import './FileActions.css';
 
 const FileActions = ({ onAddFile, onExportData }) => {
@@ -23,10 +24,27 @@ const FileActions = ({ onAddFile, onExportData }) => {
         } catch (error) {
           alert("Failed to parse JSON. Please check the file.");
         }
-        setIsModalOpen(false); // Close modal after setting nodes and edges
+        setIsModalOpen(false);
       };
       reader.readAsText(file);
     }
+  };
+
+  const handleExportClick = () => {
+    Swal.fire({
+      title: "Do you want to save the changes?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Save",
+      denyButtonText: `Don't save`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Saved!", "", "success");
+        onExportData(); // Call the export function here if confirmed
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   };
 
   return (
@@ -34,7 +52,7 @@ const FileActions = ({ onAddFile, onExportData }) => {
       <button className="action-button add-file" onClick={handleAddFileClick}>
         Add File
       </button>
-      <button className="action-button export-data" onClick={onExportData}>
+      <button className="action-button export-data" onClick={handleExportClick}>
         Export Data
       </button>
 
