@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom/client';
 import { ReactFlowProvider } from 'reactflow';
-
 import App from './App';
 
 // all styles for this example app are in the index.css file to keep it as simple as possible

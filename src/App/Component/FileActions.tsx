@@ -50,10 +50,10 @@ const FileActions = ({ onAddFile, onExportData }) => {
   return (
     <div className="file-actions">
       <button className="action-button add-file" onClick={handleAddFileClick}>
-        Add File
+        Import Json
       </button>
       <button className="action-button export-data" onClick={handleExportClick}>
-        Export Data
+        Export Json
       </button>
 
       {isModalOpen && (

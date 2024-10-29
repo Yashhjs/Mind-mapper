@@ -15,7 +15,9 @@ body,
 }
 
 .header {
-  color: #cdcdcd;
+  color: #808080;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 /* Node Styles for MindMap */

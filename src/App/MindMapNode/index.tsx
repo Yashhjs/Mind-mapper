@@ -13,8 +13,6 @@ export type NodeData = {
 function MindMapNode({ id, data }: NodeProps<NodeData>) {
   const inputRef = useRef<HTMLInputElement>(null);
   const updateNodeLabel = useStore((state) => state.updateNodeLabel);
-
-  // console.log("===================> data.hidden <======================", data);
   
   useEffect(() => {
     setTimeout(() => {
@@ -24,7 +22,7 @@ function MindMapNode({ id, data }: NodeProps<NodeData>) {
 
   useLayoutEffect(() => {
     if (inputRef.current) {
-      inputRef.current.style.width = `${data.label.length * 8}px`;
+      inputRef.current.style.width = `${data.label.length * 10}px`;
     }
   }, [data.label.length]);
 

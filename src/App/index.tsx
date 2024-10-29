@@ -16,7 +16,6 @@ import ReactFlow, {
 import shallow from 'zustand/shallow';
 import FileActions from './Component/FileActions';
 import Swal from 'sweetalert2';
-
 import useStore, { RFState } from './store';
 import MindMapNode, { NodeData } from './MindMapNode';
 import MindMapEdge from './MindMapEdge';
@@ -162,12 +161,12 @@ function Flow() {
     if (showError) {
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
-          confirmButton: "btn btn-success",
-          cancelButton: "btn btn-danger"
+          confirmButton: "btn btn-success mx-2",
+          cancelButton: "btn btn-danger mx-2"
         },
         buttonsStyling: false
       });
-
+  
       swalWithBootstrapButtons.fire({
         title: "Are you sure?",
         text: "No nodes are available. You won't be able to revert this!",
@@ -183,7 +182,7 @@ function Flow() {
             text: "All nodes have been deleted.",
             icon: "success"
           }).then(() => {
-            setShowError(false);
+            setShowError(false); 
             window.location.reload(); // Refresh the page after deletion
           });
         } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -191,13 +190,12 @@ function Flow() {
             title: "Cancelled",
             text: "Your nodes are safe :)",
             icon: "error"
-          }).then(() => {
-            setShowError(false); // Close the error without reloading
           });
         }
       });
     }
-  }, [showError]); // Listen for showError changes
+  }, [showError]);
+  
 
   const handleCloseError = () => {
     setShowError(false);
