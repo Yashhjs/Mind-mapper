@@ -52,16 +52,15 @@ function Flow() {
   const [currentNodes, setNodes] = useState(nodes);
   const [currentEdges, setEdges] = useState(edges);
   const [showError, setShowError] = useState(false);
-
   useEffect(() => {
     setNodes(nodes);
-    setEdges(edges); // Update edges too
+    setEdges(edges); 
     if (nodes.length === 0) {
-      setShowError(true); // Trigger error modal if there are no nodes
+      setShowError(true); 
     } else {
-      setShowError(false); // Hide error modal if nodes are present
+      setShowError(false);
     }
-  }, [nodes, edges]); // Include edges in dependencies
+  }, [nodes, edges]); 
 
   const handleAddFile = (importedNodes: SetStateAction<Node<NodeData>[]>, importedEdges: SetStateAction<Edge[]>) => {
     useStore.setState({
@@ -156,7 +155,7 @@ function Flow() {
     URL.revokeObjectURL(link.href);
   };
 
-  // Effect to handle error modal when showError changes
+  
   useEffect(() => {
     if (showError) {
       const swalWithBootstrapButtons = Swal.mixin({
@@ -166,40 +165,21 @@ function Flow() {
         },
         buttonsStyling: false
       });
-  
       swalWithBootstrapButtons.fire({
-        title: "Are you sure?",
-        text: "No nodes are available. You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire({
-            title: "Deleted!",
-            text: "All nodes have been deleted.",
-            icon: "success"
-          }).then(() => {
-            setShowError(false); 
-            window.location.reload(); // Refresh the page after deletion
-          });
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          swalWithBootstrapButtons.fire({
-            title: "Cancelled",
-            text: "Your nodes are safe :)",
-            icon: "error"
-          });
-        }
-      });
+        title: "Deleted!",
+        text: "All nodes have been deleted.",
+        icon: "success"
+      }).then(() => {
+        setShowError(false); 
+        window.location.reload(); // Refresh the page after deletion
+      }); 
     }
   }, [showError]);
   
 
-  const handleCloseError = () => {
-    setShowError(false);
-  };
+  // const handleCloseError = () => {
+  //   setShowError(false);
+  // };
 
   return (
     <>
