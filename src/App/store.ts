@@ -9,6 +9,7 @@ import {
   applyEdgeChanges,
   XYPosition,
 } from 'reactflow';
+import Swal from 'sweetalert2';
 import create from 'zustand';
 import { nanoid } from 'nanoid/non-secure';
 
@@ -32,17 +33,30 @@ const useStore = create<RFState>((set, get) => ({
       position: { x: 0, y: 0 },
       dragHandle: '.dragHandle',
       hidden: false,
-      animated: true
+      animated: true,
     },
   ],
   edges: [],
   onNodesChange: (changes: NodeChange[]) => {
-    set({
-      nodes: applyNodeChanges(changes, get().nodes),
-    });
-
+    console.log(changes, "changes");
+    
+    if(changes[0].id!=='root'){
+      set({
+        nodes: applyNodeChanges(changes, get().nodes),
+      });
+    }else{
+      if(changes[0].type==='remove'){
+        addDeleteConfirmationListener();
+      }else{
+        set({
+          nodes: applyNodeChanges(changes, get().nodes),
+        });
+      }
+    }
   },
   onEdgesChange: (changes: EdgeChange[]) => {
+    console.log(changes, "Edges-----changes");
+    
     set({
       edges: applyEdgeChanges(changes, get().edges),
     });
@@ -51,18 +65,13 @@ const useStore = create<RFState>((set, get) => ({
     set({
       nodes: get().nodes.map((node) => {
         if (node.id === nodeId) {
-          // it's important to create a new object here, to inform React Flow about the changes
           node.data = { ...node.data, label };
         }
-
         return node;
       }),
     });
   },
   addCustomChildNode: (parentNode: Node, position: XYPosition, existingTargetNodeId?: any) => {
-    // Log the existingTargetNodeId for debugging
-    // console.log("===========existingTargetNodeId=============", existingTargetNodeId);
-    
     const newNode = {
       id: nanoid(),
       type: 'mindmap',
@@ -71,33 +80,70 @@ const useStore = create<RFState>((set, get) => ({
       dragHandle: '.dragHandle',
       parentNode: parentNode.id,
       hidden: false,
-      animated: true
+      animated: true,
     };
-  
+
     const newEdge = {
       id: nanoid(),
       source: parentNode.id,
       target: existingTargetNodeId || newNode.id,
     };
-  
-    // console.log("========newEdge=========", newEdge);
-  
-    // Create an updated state for nodes and edges
+
     let updatedNodes = get().nodes;
     let updatedEdges = [...get().edges, newEdge];
-  
-    // If no existingTargetNodeId, add the new node to the nodes array
+
     if (!existingTargetNodeId) {
       updatedNodes = [...updatedNodes, newNode];
     }
-  
-    // Update the state with the new nodes and edges
+
     set({
       nodes: updatedNodes,
       edges: updatedEdges,
     });
   },
-  
 }));
+
+const addDeleteConfirmationListener = () => {
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Backspace" && (event.ctrlKey || event.metaKey)) {
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success mx-2",
+          cancelButton: "btn btn-danger mx-2",
+        },
+        buttonsStyling: false,
+      });
+
+      swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const changes: NodeChange[] = [{ type: 'remove', id: 'root' }];
+          useStore.getState().onNodesChange(changes);
+
+          swalWithBootstrapButtons.fire({
+            title: "Deleted!",
+            text: "Your node has been deleted.",
+            icon: "success",
+          }).then(() => {
+            window.location.reload();
+          });
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your node is safe :)",
+            icon: "error",
+          });
+        }
+      });
+    }
+  });
+};
 
 export default useStore;

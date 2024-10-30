@@ -22,7 +22,8 @@ function MindMapNode({ id, data }: NodeProps<NodeData>) {
 
   useLayoutEffect(() => {
     if (inputRef.current) {
-      inputRef.current.style.width = `${data.label.length * 10}px`;
+      const width = data.label.length * 10 + 5;
+      inputRef.current.style.width = `${Math.max(width, 30)}px`; // Minimum width of 20px
     }
   }, [data.label.length]);
 

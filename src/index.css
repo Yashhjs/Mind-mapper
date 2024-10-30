@@ -66,16 +66,16 @@ body,
 /* Connection Line */
 .react-flow .react-flow__connectionline {
   z-index: 0;
-  stroke: #ffa726; /* Bright color for connection lines */
+  stroke: #ffa726; 
   stroke-width: 2px;
-  transition: stroke 0.3s, stroke-width 0.3s; /* Smooth transition on hover */
+  transition: stroke 0.1s, stroke-width 0.1s; /* Smooth transition on hover */
 }
 
 /* Input Wrapper */
 .inputWrapper {
   display: flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 4px 8px;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -95,15 +95,14 @@ body,
 /* Styling for the input field inside the Mindmap node */
 .input {
   border: none;
-  padding: 0 4px;
+  padding: 0 3px;
   border-radius: 5px;
   font-weight: 700;
   background: transparent;
-  color: #333; /* Darker text for better contrast */
   height: 100%;
-  flex: 1; /* Make the input take available space */
-  transition: transform 0.3s, color 0.3s, background 0.3s; /* Smooth transition for hover and focus */
-  pointer-events: all; /* Ensure input can be clicked/edited */
+  flex: 1; 
+  transition: transform 0.3s, color 0.3s, background 0.3s; 
+  pointer-events: all; 
 }
 
 /* Hover effect for the input text when hovering the node */

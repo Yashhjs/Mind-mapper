@@ -51,15 +51,11 @@ function Flow() {
 
   const [currentNodes, setNodes] = useState(nodes);
   const [currentEdges, setEdges] = useState(edges);
-  const [showError, setShowError] = useState(false);
+
   useEffect(() => {
     setNodes(nodes);
     setEdges(edges); 
-    if (nodes.length === 0) {
-      setShowError(true); 
-    } else {
-      setShowError(false);
-    }
+
   }, [nodes, edges]); 
 
   const handleAddFile = (importedNodes: SetStateAction<Node<NodeData>[]>, importedEdges: SetStateAction<Edge[]>) => {
@@ -154,33 +150,7 @@ function Flow() {
     link.click();
     URL.revokeObjectURL(link.href);
   };
-
   
-  useEffect(() => {
-    if (showError) {
-      const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-          confirmButton: "btn btn-success mx-2",
-          cancelButton: "btn btn-danger mx-2"
-        },
-        buttonsStyling: false
-      });
-      swalWithBootstrapButtons.fire({
-        title: "Deleted!",
-        text: "All nodes have been deleted.",
-        icon: "success"
-      }).then(() => {
-        setShowError(false); 
-        window.location.reload(); // Refresh the page after deletion
-      }); 
-    }
-  }, [showError]);
-  
-
-  // const handleCloseError = () => {
-  //   setShowError(false);
-  // };
-
   return (
     <>
       <ReactFlow
